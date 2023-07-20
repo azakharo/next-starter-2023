@@ -1,9 +1,10 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import Image from 'next/image';
+import styles from './page.module.css';
 
 export default function Home() {
   const someVar = '';
-    const anotherVar = 5;
+  const anotherVar = 5;
+  console.log('adfadf');
 
   return (
     <main className={styles.main}>
@@ -94,5 +95,5 @@ export default function Home() {
         </a>
       </div>
     </main>
-  )
+  );
 }
