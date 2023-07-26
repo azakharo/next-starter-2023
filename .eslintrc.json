@@ -1,7 +1,11 @@
 {
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
   "extends": [
     "next/core-web-vitals",
     "plugin:@typescript-eslint/recommended",
+    "airbnb-typescript",
     "prettier"  // Add "prettier" last. This will turn off eslint rules conflicting with prettier. This is not what will format our code.
   ],
   "plugins": [
@@ -9,8 +13,6 @@
     "simple-import-sort"
   ],
   "rules": {
-    "prefer-const": "error",
-
     // Too restrictive, writing ugly code to defend against a very unlikely scenario: https://eslint.org/docs/rules/no-prototype-builtins
     "no-prototype-builtins": "off",
     // https://stackoverflow.com/a/64024916/286387
