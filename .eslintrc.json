@@ -5,7 +5,8 @@
     "prettier"  // Add "prettier" last. This will turn off eslint rules conflicting with prettier. This is not what will format our code.
   ],
   "plugins": [
-    "@typescript-eslint"
+    "@typescript-eslint",
+    "simple-import-sort"
   ],
   "rules": {
     "prefer-const": "error",
@@ -31,6 +32,8 @@
     "import/first": "error",
     "import/newline-after-import": "error",
     "import/no-duplicates": "error",
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
 
     // Too restrictive: https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/destructuring-assignment.md
     "react/destructuring-assignment": "off",
@@ -41,6 +44,7 @@
     "react/jsx-filename-extension": "off",
     "react/require-default-props": "off",
     "react/jsx-props-no-spreading": "off",
+
     // Allow most functions to rely on type inference. If the function is exported, then `@typescript-eslint/explicit-module-boundary-types` will ensure it's typed.
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/no-use-before-define": [
@@ -83,5 +87,37 @@
     "require-atomic-updates": "error",
     "max-nested-callbacks": "error",
     "no-return-await": "error"
-  }
+  },
+  "overrides": [
+    /////////////////////////////////////////////
+    // override "simple-import-sort" config
+    {
+      "files": ["*.js", "*.jsx", "*.ts", "*.tsx"],
+      "rules": {
+        "simple-import-sort/imports": [
+          "error",
+          {
+            "groups": [
+              // Packages `react` related packages come first.
+              ["^react", "^@?\\w"],
+              // Internal packages.
+              [
+                "^src(/.*|$)",
+                // Parent imports. Put `..` last.
+                "^\\.\\.(?!/?$)", "^\\.\\./?$",
+                // Other relative imports. Put same-folder imports and `.` last.
+                "^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$",
+                // Images
+                "^(IMAGES)(/.*|$)"
+              ],
+              // Side effect imports.
+              ["^\\u0000"],
+              // Style imports.
+              ["^.+\\.?(css)$"]
+            ]
+          }
+        ]
+      }
+    }
+  ]
 }
