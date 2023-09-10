@@ -3,9 +3,6 @@ import Image from 'next/image';
 import styles from './page.module.css';
 
 export default function Home() {
-  const myvar = 1;
-  console.log('hello eslint', myvar);
-
   return (
     <main className={styles.main}>
       <div className={styles.description}>
