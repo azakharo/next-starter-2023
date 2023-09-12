@@ -1,4 +1,5 @@
-{
+module.exports = {
+  "root": true,
   "parserOptions": {
     "project": "./tsconfig.json"
   },
@@ -104,12 +105,13 @@
               // Internal packages.
               [
                 "^src(/.*|$)",
+                "^@(/.*|$)",
                 // Parent imports. Put `..` last.
                 "^\\.\\.(?!/?$)", "^\\.\\./?$",
                 // Other relative imports. Put same-folder imports and `.` last.
-                "^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$",
+                "^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"
                 // Images
-                "^(IMAGES)(/.*|$)"
+                //"^(IMAGES)(/.*|$)"
               ],
               // Side effect imports.
               ["^\\u0000"],
@@ -121,4 +123,4 @@
       }
     }
   ]
-}
+};
