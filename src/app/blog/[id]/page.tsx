@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 
-import { getPostById } from '@/api/getPosts';
+import { getPostById } from 'src/api/getPosts';
 
 type Props = {
   params: {

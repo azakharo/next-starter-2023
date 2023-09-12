@@ -1,5 +1,5 @@
-import { GoogleButton } from '@/components/GoogleButton';
-import { SignInForm } from '@/components/SignInForm';
+import { GoogleButton } from 'src/components/GoogleButton';
+import { SignInForm } from 'src/components/SignInForm';
 
 // This is a custom SignIn page
 export default async function Signin() {

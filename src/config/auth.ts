@@ -2,7 +2,7 @@ import type { AuthOptions, User } from 'next-auth';
 import Credentials from 'next-auth/providers/credentials';
 import GoggleProvider from 'next-auth/providers/google';
 
-import { users } from '@/data/users';
+import { users } from 'src/data/users';
 
 export const authConfig: AuthOptions = {
   providers: [
