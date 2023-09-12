@@ -18,6 +18,7 @@ export async function GET(req: Request) {
   return NextResponse.json(currentPosts);
 }
 
+// Dummy implementation - does nothing
 export async function POST(req: Request) {
   const body = await req.json();
 
