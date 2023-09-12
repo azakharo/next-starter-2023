@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 
-import { getAllPosts } from 'src/api/getPosts';
+import { getAllPosts } from 'src/services/getPosts';
 
 export const metadata: Metadata = {
   title: 'Blog | Next App',
