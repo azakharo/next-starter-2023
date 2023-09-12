@@ -29,3 +29,23 @@ export const getPostsBySearch = async (search: string) => {
 
   return response.json();
 };
+
+export const getAllLocalPosts = async () => {
+  const response = await fetch('http://localhost:3300/posts');
+
+  if (!response.ok) {
+    throw new Error('Unable to fetch posts.');
+  }
+
+  return response.json();
+};
+
+export const getLocalPostById = async (id: string) => {
+  const response = await fetch(`http://localhost:3300/posts/${id}`);
+
+  if (!response.ok) {
+    throw new Error('Unable to fetch post.');
+  }
+
+  return response.json();
+};
