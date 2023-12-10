@@ -11,7 +11,8 @@ module.exports = {
   ],
   "plugins": [
     "@typescript-eslint",
-    "simple-import-sort"
+    "simple-import-sort",
+    "prettier",
   ],
   "rules": {
     // Too restrictive, writing ugly code to defend against a very unlikely scenario: https://eslint.org/docs/rules/no-prototype-builtins
@@ -88,7 +89,9 @@ module.exports = {
     "no-promise-executor-return": "error",
     "require-atomic-updates": "error",
     "max-nested-callbacks": "error",
-    "no-return-await": "error"
+    "no-return-await": "error",
+
+    "prettier/prettier": "error",
   },
   "overrides": [
     /////////////////////////////////////////////
